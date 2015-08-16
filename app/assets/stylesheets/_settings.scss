@@ -1,0 +1,47 @@
+/* base css function mixins and classes */
+
+/** radius to css class */
+@mixin radius($radius: $global-radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+/** adds transition behaviour to css class, ex. link hover (color change) animation */
+@mixin transition($length: .3s) {
+  -o-transition:$length;
+  -ms-transition:$length;
+  -moz-transition:$length;
+  -webkit-transition:$length;
+  transition:$length;
+
+  /* shaking on hover issiue */
+  // -webkit-transform: translateZ(0);
+}
+
+
+/* icon sizes */
+// use <i class="fi-* small|medium|large|xlarge"></i>
+//for icon reference @see http://zurb.com/playground/foundation-icon-fonts-3
+// feel free to add your own sizes
+$icon: (
+        small 20,
+        medium 35,
+        large 50,
+        xlarge 70
+);
+
+//pattern texture for section pattern
+//use <section class="section pattern"> ...
+//for quick generating your own pattern @see http://www.patternify.com/
+$pattern-url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAIUlEQVQIW2NMS0uTZACCWbNmPQfRIMCIVRAmi0wzEi0IALZyCAYR8BqEAAAAAElFTkSuQmCC";
+
+/* screen backgrounds
+for screen styles @see _screen.scss
+use <section class="screen elephant"> ....
+to add your own
+- upload your_image.jpg to /app/assets/images/screen/your_image.jpg,
+- add 'your_image' to list below
+- use with <section class="screen your_image"
+*/
+$screen: ('bird', 'texture', 'elephant', 'elephant-blurred', 'elephant-texture', 'elephant-color', 'feed', 'giraffe', 'giraffe-blurred', 'giraffe-cut', 'kameleon', 'kameleon-blurred', 'macaw', 'panther', 'toucan', 'turtle', 'turtle-cut', 'fox', 'cat')

@@ -1,0 +1,94 @@
+
+<div class="sticky top-nav fixed" data-js-scroll="100">
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <%= link_to(image_tag('navbar/navbar-logo.png'), root_path) %>
+      </li>
+    </ul>
+    <section class="top-bar-section">
+      <ul class="right">
+        <li><%= link_to "Projects","/#projects" %></li>
+        <li><%= link_to "Studio","/#studio" %></li>
+        <li><%= link_to "Contact","/#contact" %></li>
+      </ul>
+    </section>
+  </nav>
+</div>
+<div data-js-screen-slider>
+  <% @welcome_images.each do |image| %>
+      <%= image_tag "welcome/#{image.split('/').last}" %>
+  <% end %>
+</div>
+<a class="page-anchor" id="projects"></a>
+<div class="row full-width gallery">
+  <%  @project_folders.keys.each do |key|%>
+      <div class="small-6 large-3 columns gallery-column">
+        <ul class="clearing-thumbs clearing-feature" data-clearing>
+          <% images = @project_folders[key] %>
+          <% images.each_with_index do |image, index| %>
+              <% path = "projects/#{key}/#{image.split('/').last}"%>
+              <% if image.split('/').last == "featured.jpg" %>
+                  <li class="clearing-featured-img"><a href="<%= asset_path path%>"><%= image_tag path, :'data-caption' => "Project #{key} (#{index + 1})" %></a></li>
+              <% else %>
+                  <li><a href="<%= asset_path path%>"><%= image_tag path, :'data-caption' => "Project #{key} (#{index + 1})"  %></a></li>
+              <% end %>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
+</div>
+<a class="page-anchor" id="studio"></a>
+<div class="full-width bio">
+  <div class="row">
+    <h3>
+      Studio
+    </h3>
+    We believe in a world of architectural wonders, but hidden away deep inside is the consciousness of every individual. For many, it is lost between the translations of ideas and will never become reality. We aim to bring our clients’ perspectives in how they perceive space and purpose to a strong visual statement. We believe all designs should stand the test of time and contribute to a form of culture as it ages in prospective, and discover and explore concepts where imaginations come to life to a degree as far as creativity would allow. We invite you into the journey of the architectural world.
+    Gaius Design Associates is an interdisciplinary design studio based in the Lower Mainland of Vancouver. Founded by three local designers, the studio is continually expanding to form a team of designers from different background and discipline. The designers consolidate projects through green efficient means in every approach; from designing, manufacturing, and constructing throughout the lifecycle of its services. This emphasis in perspective determines the form of our structures and their presence becomes a natural part of its surroundings. With constant communication and collaborative exchanges in between, we deliver seamless and detail orientated design solutions, bring a balance of context and beauty into each and every project.
+  </div>
+</div>
+
+<div class="row full-width">
+  <%= image_tag "banner/1.jpg" %>
+</div>
+
+<a class="page-anchor" id="contact"></a>
+<div class="row contact">
+  <div class="small-12 large-6 columns gallery-column">
+    <p>
+    <h3>Contact Us</h3>
+    <h5>Email: <%= mail_to 'contact@gaiusgroup.org'%></h5>
+    <h5>Address: Metrotower II, 4720 Kingsway, Burnaby, Suite 2600, V5H 4N2</h5>
+    </p>
+    <p>
+    <h4>For service in Vietnamese:</h4>
+    <h5>Leon Tran (604) 446-3268</h5>
+    <h5>AIBC, Architectural Technologist</h5>
+    <h5>Design Consultant/ Designer</h5>
+    </p>
+    <p>
+    <h4>For service in English, Hindi, or Punjabi:</h4>
+    <h5>Rinku Bhatia (778) 891-7595</h5>
+    <h5>ASSTBC, Civil Engineering</h5>
+    <h5>Design Consultant/ Designer</h5>
+    </p>
+    <p>
+    <h4>For Service in English, Cantonese and Mandarin:</h4>
+    <h5>Yan Zhang (778) 318-5384</h5>
+    <h5>Interior Designer/ Draftsperson</h5>
+    <h5>Design Consultant</h5>
+    </p>
+    <p>
+    <h4>For Service in English, Mandarin:</h4>
+    <h5>Jerry Lee (778) 388-8637</h5>
+    <h5>Draftsperson</h5>
+    <h5>Design Consultant</h5>
+    </p>
+
+  </div>
+</div>
+
+<div class="row full-width">
+  <%= image_tag "banner/3.jpg" %>
+</div>

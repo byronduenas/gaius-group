@@ -1,0 +1,55 @@
+
+/** general messy file - adding styles starts here and when style passes 'component' condition
+ should be extracted to external file like icon, font, screen .... */
+
+/**
+  this is for adjusting default foundation scrolling topbar behaviour
+  when scrolling by default it adds padding on body, moving our colorful first section down
+  to avoid that we pad first section instead of body
+*/
+body.f-topbar-fixed {
+  padding: 0;
+
+  >header:first-child {
+    padding-top: $topbar-height;
+    //padding-top: -$topbar-height;
+  }
+}
+
+
+/** download from itunes button - no hover effect*/
+.top-bar-section li:not(.has-form) a.no-hover {
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+/* scrolling class is added to top-nav via js (bound to data-js-scroll html attr)
+data-js-scroll=100 adds scrolling class after scrolling 100px */
+.top-nav.scrolling {
+
+  /* white scrillbar with semi transparent stripe at the bottom (shadow) */
+  @include transition;
+  background-color: rgba($oil, .90);
+  box-shadow: 0px 8px 0px rgba($black, 0.1);
+  -webkit-box-shadow: 0px 8px 0px rgba($black, 0.1);
+
+  /* top bar section links change color to $jet (grey) */
+  .top-bar-section {
+    a {
+      @include transition;
+
+      color: $white;
+      &:hover {
+        color: darken($white, 10%);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  /* logo is updated from white version to full color default */
+  .logo {
+    background-image: image-url("logo/mycrew_default.svg");
+  }
+}
+

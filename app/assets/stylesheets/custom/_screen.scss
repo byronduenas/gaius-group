@@ -1,0 +1,119 @@
+/** full screen image rendering and components overlaying the image */
+
+.screen {
+  background-color: $body-bg;
+  width: 100%;
+  max-width: 100%;
+
+  // full height 100% of a screen */
+  &.full {
+    min-height: 100%;
+  }
+
+  // banner height, ex. desktop home page
+  &.banner {
+    position: relative;
+    top: -$topbar-height;
+  }
+
+  &.primary {
+    background-color: scale-color($primary-color, $lightness: -5%);
+  }
+
+  &.texture {
+    $texture-color: scale-color(#416DCA, $lightness: -5%);
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    background-size: cover;
+
+    background-image: radial-gradient(ellipse farthest-side at top center, rgba($texture-color,.5), rgba($texture-color,.90)), image-url("screen/texture.jpg");
+  }
+
+
+  &.bg {
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+}
+
+.full-width {
+  width: 100%;
+  max-width: 100%;
+}
+
+.bio {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: $oil;
+  color: $white;
+  h3 {
+    color: $white;
+  }
+}
+
+.gallery {
+  background-color: $jet;
+}
+
+.gallery-column {
+  padding-top: $column-gutter/2;
+  padding-bottom: $column-gutter/2;
+}
+
+.contact {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.page-anchor {
+  display: block;
+  position: relative;
+  padding-top: $topbar-height;
+  margin-top: -$topbar-height;
+  visibility: hidden;
+}
+
+//screen text classes and behaviour
+.bg-text {
+  color: $white;
+
+  &.links {
+    a {
+      color: $white;
+      font-weight: bold;
+
+      &:hover {
+        color: rgba($white, .8);
+      }
+    }
+  }
+
+  /* nice sub header info text */
+  &.info {
+    font-size: rem-calc(18);
+
+    @media #{$medium-up} {
+      font-size: rem-calc(22);
+    }
+
+    margin-left: 15px;
+  }
+
+  /* title - shadow white text ex. devise screens */
+  &.title {
+    color: $white;
+    text-align: center;
+
+    small {
+      color: rgba($white,.7);
+    }
+  }
+
+  // large header text, ex. desktop HP
+  &.jumbo {
+    font-size: rem-calc(65);
+    font-family: Lato;
+    font-weight: 300;
+  }
+}

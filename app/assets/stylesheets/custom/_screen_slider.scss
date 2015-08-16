@@ -1,0 +1,57 @@
+/** full screen slider - HP, intake etc */
+
+/* footer on top layer with sign up call to action */
+.screen-slider-footer {
+  background-color: rgba(0,0,0,.85);
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 140px;
+  padding-top: 20px;
+  z-index: 99;
+}
+
+// header on top layer with logo (only portrait)
+.screen-slider-header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+
+.screen-slider-section {
+  width: 100%;
+  margin:0;
+  padding:0;
+  z-index: 98;
+
+  .slick-dots {
+
+    button {
+      background-color: rgba(0,0,0,.2);
+    }
+
+    .slick-active {
+      button {
+        background-color: rgba(0,0,0,.6);
+      }
+    }
+  }
+}
+
+.slick-slider {
+  margin-bottom: 0px;
+}
+
+.slick-prev {
+  left: 25px;
+}
+
+.slick-next {
+  right: 25px;
+}

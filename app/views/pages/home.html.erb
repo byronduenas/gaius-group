@@ -55,7 +55,35 @@
 
 <a class="page-anchor" id="contact"></a>
 <div class="row contact">
-  <div class="small-12 large-6 columns gallery-column">
+  <div class="small 12 large-6 columns">
+    <%= form_for @message, :url => contact_path do |form| %>
+        <fieldset class="fields">
+          <div class="field">
+            <%= form.label :name %>
+            <%= form.text_field :name %>
+          </div>
+
+          <div class="field">
+            <%= form.label :email %>
+            <%= form.text_field :email %>
+          </div>
+          <div class="field">
+            <%= form.label :subject %>
+            <%= form.text_field :subject %>
+          </div>
+
+          <div class="field">
+            <%= form.label :body %>
+            <%= form.text_area :body %>
+          </div>
+        </fieldset>
+
+        <fieldset class="actions">
+          <%= form.submit "Send" %>
+        </fieldset>
+    <% end %>
+  </div>
+  <div class="small-12 large-6 columns">
     <p>
     <h3>Contact Us</h3>
     <h5>Email: <%= mail_to 'contact@gaiusgroup.org'%></h5>

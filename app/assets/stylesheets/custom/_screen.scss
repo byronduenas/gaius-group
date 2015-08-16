@@ -13,7 +13,7 @@
   // banner height, ex. desktop home page
   &.banner {
     position: relative;
-    top: -$topbar-height;
+    top: $topbar-height;
   }
 
   &.primary {

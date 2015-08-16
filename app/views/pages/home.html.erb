@@ -1,9 +1,9 @@
-
+<a class="page-anchor" id="top"></a>
 <div class="sticky top-nav fixed" data-js-scroll="100">
   <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
       <li class="name">
-        <%= link_to(image_tag('navbar/navbar-logo.png'), root_path) %>
+        <%= link_to(image_tag('navbar/navbar-logo.png'), "/#top") %>
       </li>
     </ul>
     <section class="top-bar-section">
@@ -16,8 +16,14 @@
   </nav>
 </div>
 <div data-js-screen-slider>
-  <% @welcome_images.each do |image| %>
-      <%= image_tag "welcome/#{image.split('/').last}" %>
+  <% @welcome_images.each_with_index do |image, index| %>
+      <div>
+        <%= image_tag "welcome/#{image.split('/').last}" %>
+        <div class= "row" >
+          <h3><%= @quotes[index]%></h3>
+          <h5><%= @speakers[index]%></h5>
+        </div>
+      </div>
   <% end %>
 </div>
 <a class="page-anchor" id="projects"></a>

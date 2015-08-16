@@ -12,6 +12,10 @@ class PagesController < ApplicationController
       @project_folders[key] = Dir.glob("#{project}/*")
     end
     @banner_images = Dir.glob("app/assets/images/banner/*.jpg")
+    @quotes = ["“Form ever follows function”", "“True visionaries who absorb and interpret culture and design rather than just echo the latest
+trends”", "“Laughter is timeless. Imagination has no age. And dreams are forever”", "“A great building must begin with the immeasurable, must go through measurable means when
+it is being designed, and in the end must be unmeasured”"]
+    @speakers = ["- Louis Henry Sullivan", "- Barry Sternlicht", "- Walt Disney", "- Louis Kahn"]
     @message = Message.new
   end
 

@@ -1,6 +1,6 @@
 class NotificationsMailer < ApplicationMailer
 
-  default :from => "noreply@gaiusgroup.org"
+  default :from => "contact@gaiusgroup.org"
   default :to => "contact@gaiusgroup.org"
 
   def new_message(message)

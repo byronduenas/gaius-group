@@ -1,6 +1,6 @@
 class NotificationsMailer < ApplicationMailer
 
-  default :from => "root@gaiusgroup.org"
+  default :from => "noreply@gaiusgroup.org"
   default :to => "jerry_lee92@hotmail.com,yikailee@gmail.com,yanzarchi@gmail.com"
 
   def new_message(message)

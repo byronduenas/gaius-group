@@ -28,17 +28,90 @@
 </div>
 <a class="page-anchor" id="projects"></a>
 <div class="row full-width gallery">
-  <%  @project_folders.keys.each do |key|%>
+  <h1>Residential Projects</h1>
+  <%  @residential_project_folders.keys.each do |key|%>
       <div class="small-6 large-3 columns gallery-column">
         <ul class="clearing-thumbs clearing-feature" data-clearing>
-          <% images = @project_folders[key] %>
+          <% images = @residential_project_folders[key] %>
           <% images.each_with_index do |image, index| %>
-              <% path = "projects/#{key}/#{image.split('/').last}"%>
+              <% path = "projects/residential/#{key}/#{image.split('/').last}"%>
               <% if image.split('/').last == "featured.jpg" %>
                   <li class="clearing-featured-img"><a href="<%= asset_path path%>"><%= image_tag path, :'data-caption' => "Project #{key} (#{index + 1})" %></a></li>
               <% else %>
                   <li><a href="<%= asset_path path%>"><%= image_tag path, :'data-caption' => "Project #{key} (#{index + 1})"  %></a></li>
               <% end %>
+          <% end %>
+        </ul>
+        <% if key == "1" %>
+            <h5>Status: Coming Soon</h5>
+            <h5>Location: Surrey</h5>
+            <h5>Square Footage: 4555 SQ.FT.</h5>
+            <h5>Number of Bedrooms: 5</h5>
+            <h5>Number of Bathrooms: 4</h5>
+        <% end %>
+        <% if key == "2" %>
+            <h5>Status: Coming Soon</h5>
+            <h5>Location: Richmond</h5>
+            <h5>Square Footage: 4125 SQ.FT.</h5>
+            <h5>Number of Bedrooms: 5</h5>
+            <h5>Number of Bathrooms: 4</h5>
+        <% end %>
+        <% if key == "3" %>
+            <h5>Status: Complete</h5>
+            <h5>Location: Richmond</h5>
+            <h5>Square Footage: 4603 SQ.FT.</h5>
+            <h5>Number of Bedrooms: 6</h5>
+            <h5>Number of Bathrooms: 5</h5>
+        <% end %>
+        <% if key == "4" %>
+            <h5>Status: Coming Soon</h5>
+            <h5>Location: Vancouver West</h5>
+            <h5>Square Footage: 2232 SQ.FT.</h5>
+            <h5>Number of Bedrooms: 3</h5>
+            <h5>Number of Bathrooms: 2</h5>
+        <% end %>
+        <% if key == "5" %>
+            <h5>Status: Complete</h5>
+            <h5>Location: Richmond</h5>
+            <h5>Square Footage: 3929 SQ.FT.</h5>
+            <h5>Number of Bedrooms: 4</h5>
+            <h5>Number of Bathrooms: 3</h5>
+        <% end %>
+        <% if key == "6" %>
+            <h5>Status: Coming Soon</h5>
+            <h5>Location: Vancouver West</h5>
+            <h5>Square Footage: 4268 SQ.FT.</h5>
+            <h5>Number of Bedrooms: 5</h5>
+            <h5>Number of Bathrooms: 4</h5>
+        <% end %>
+        <% if key == "7" %>
+            <h5>Status: Coming Soon</h5>
+            <h5>Location: Surrey</h5>
+            <h5>Square Footage: 3852 SQ.FT.</h5>
+            <h5>Number of Bedrooms: 4</h5>
+            <h5>Number of Bathrooms: 4</h5>
+        <% end %>
+      </div>
+  <% end %>
+</div>
+<div class="row full-width gallery">
+  <h1>Commercial Projects</h1>
+  <%  @commercial_project_folders.keys.each do |key|%>
+      <div class="small-6 large-3 columns gallery-column">
+        <ul class="clearing-thumbs clearing-feature" data-clearing>
+          <% images = @residential_project_folders[key] %>
+          <% images.each_with_index do |image, index| %>
+              <% path = "projects/commercial/#{key}/#{image.split('/').last}"%>
+              <% if image.split('/').last == "featured.jpg" %>
+                  <li class="clearing-featured-img"><a href="<%= asset_path path%>"><%= image_tag path, :'data-caption' => "Project #{key} (#{index + 1})" %></a></li>
+              <% else %>
+                  <li><a href="<%= asset_path path%>"><%= image_tag path, :'data-caption' => "Project #{key} (#{index + 1})"  %></a></li>
+              <% end %>
+          <% end %>
+          <% if key == "1" %>
+              <h5>Status: Complete</h5>
+              <h5>Location: Aberdeen Center, Richmond</h5>
+              <h5>Square Footage: 350 SQ.FT.</h5>
           <% end %>
         </ul>
       </div>
@@ -82,10 +155,7 @@
             <%= form.label :body %>
             <%= form.text_area :body %>
           </div>
-        </fieldset>
-
-        <fieldset class="actions">
-          <%= form.submit "Send" %>
+          <%= form.submit "Send", class: "button" %>
         </fieldset>
     <% end %>
   </div>

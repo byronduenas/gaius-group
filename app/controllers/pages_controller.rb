@@ -5,11 +5,17 @@ class PagesController < ApplicationController
 
   def home
     @welcome_images = Dir.glob("app/assets/images/welcome/*.png")
-    @projects = Dir.glob("app/assets/images/projects/*")
-    @project_folders = {}
-    @projects.each do |project|
+    @residential_projects = Dir.glob("app/assets/images/projects/residential/*")
+    @commercial_projects = Dir.glob("app/assets/images/projects/commercial/*")
+    @residential_project_folders = {}
+    @commercial_project_folders = {}
+    @residential_projects.each do |project|
       key = project.split('/').last
-      @project_folders[key] = Dir.glob("#{project}/*")
+      @residential_project_folders[key] = Dir.glob("#{project}/*")
+    end
+    @commercial_projects.each do |project|
+      key = project.split('/').last
+      @commercial_project_folders[key] = Dir.glob("#{project}/*")
     end
     @banner_images = Dir.glob("app/assets/images/banner/*.jpg")
     @quotes = ["“Form ever follows function”", "“True visionaries who absorb and interpret culture and design rather than just echo the latest
@@ -27,7 +33,7 @@ it is being designed, and in the end must be unmeasured”"]
       redirect_to(root_path, :notice => "Message was successfully sent.")
     else
       flash.now.alert = "Please fill all fields."
-      render :home
+      redirect_to(root_path)
     end
   end
 
